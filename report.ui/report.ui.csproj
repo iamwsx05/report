@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2193E0F2-7AA0-450B-8A7A-AF1018CD4E81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Report.Ui</RootNamespace>
+    <AssemblyName>report.ui</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="comm.control, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\comm.control.dll</HintPath>
+    </Reference>
+    <Reference Include="comm.entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\comm.entity.dll</HintPath>
+    </Reference>
+    <Reference Include="comm.itf, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\comm.itf.dll</HintPath>
+    </Reference>
+    <Reference Include="comm.utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\comm.utils.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.BonusSkins.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Data.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Design.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Design.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.PivotGrid.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Printing.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.RichEdit.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Snap.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Sparkline.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TouchSkins.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.TouchSkins.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Tutorials.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Tutorials.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Utils.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.Utils.v13.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraBars.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraEditors.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2.Design, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraEditors.v13.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraLayout.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.2.Design, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraLayout.v13.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraNavBar.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraPivotGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraPrinting.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraReports.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraReports.v13.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraTreeList.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\DevExpress.XtraVerticalGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=a20767533a162583, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="wecare.core, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\debug\wecare.core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controller\ctladverseevent.cs" />
+    <Compile Include="controller\ctladverseeventall.cs" />
+    <Compile Include="controller\ctlcontagion.cs" />
+    <Compile Include="controller\ctlcontagionedit.cs" />
+    <Compile Include="controller\ctleventedit.cs" />
+    <Compile Include="controller\ctlinterviewedit.cs" />
+    <Compile Include="controller\ctloutpatientinterview.cs" />
+    <Compile Include="controller\ctlsbfirstpageuploadsb.cs" />
+    <Compile Include="controller\ctlsbmzchxmupload.cs" />
+    <Compile Include="controller\ctlsbuploadsbpublic.cs" />
+    <Compile Include="controller\ctlybuploadauto.cs" />
+    <Compile Include="controller\ctlzrbbg.cs" />
+    <Compile Include="controller\ctlzrbbgedit.cs" />
+    <Compile Include="viewer\frmopreationregister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmopreationregister.Designer.cs">
+      <DependentUpon>frmopreationregister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmadverseeventstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmadverseeventstat.Designer.cs">
+      <DependentUpon>frmadverseeventstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmriskanastat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmriskanastat.Designer.cs">
+      <DependentUpon>frmriskanastat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmoccupatioexpstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmoccupatioexpstat.Designer.cs">
+      <DependentUpon>frmoccupatioexpstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmrptportiondetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmrptportiondetail.Designer.cs">
+      <DependentUpon>frmrptportiondetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmrptproportion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmrptproportion.Designer.cs">
+      <DependentUpon>frmrptproportion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatskinstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatskinstrument.Designer.cs">
+      <DependentUpon>frmstatskinstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmzrbbgadvers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmzrbbgadvers.Designer.cs">
+      <DependentUpon>frmzrbbgadvers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmzrbbgkedit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmzrbbgkedit.Designer.cs">
+      <DependentUpon>frmzrbbgkedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frminterviewedit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frminterviewedit.Designer.cs">
+      <DependentUpon>frminterviewedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmoutpatientinterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmoutpatientinterview.Designer.cs">
+      <DependentUpon>frmoutpatientinterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygalertedstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygalertedstat.Designer.cs">
+      <DependentUpon>frmygalertedstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygalerted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygalerted.Designer.cs">
+      <DependentUpon>frmygalerted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmsbmzcfxmdr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmsbmzcfxmdr.Designer.cs">
+      <DependentUpon>frmsbmzcfxmdr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proxy\proxyuploadsb.cs" />
+    <Compile Include="viewer\frmsbfirstpageup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmsbfirstpageup.Designer.cs">
+      <DependentUpon>frmsbfirstpageup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygoperationstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygoperationstat.Designer.cs">
+      <DependentUpon>frmygoperationstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygmachinestat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygmachinestat.Designer.cs">
+      <DependentUpon>frmygmachinestat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygdrugstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygdrugstat.Designer.cs">
+      <DependentUpon>frmygdrugstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygadversinpatstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygadversinpatstat.Designer.cs">
+      <DependentUpon>frmygadversinpatstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmygaccessrecordstat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmygaccessrecordstat.Designer.cs">
+      <DependentUpon>frmygaccessrecordstat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmnurseventinstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmnurseventinstrument.Designer.cs">
+      <DependentUpon>frmnurseventinstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventskin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventskin.Designer.cs">
+      <DependentUpon>frmstatnurseventskin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventdept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventdept.Designer.cs">
+      <DependentUpon>frmstatnurseventdept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventlevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventlevel.Designer.cs">
+      <DependentUpon>frmstatnurseventlevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventsubclass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventsubclass.Designer.cs">
+      <DependentUpon>frmstatnurseventsubclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventclass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatnurseventclass.Designer.cs">
+      <DependentUpon>frmstatnurseventclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmadverseinfectious.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmadverseinfectious.Designer.cs">
+      <DependentUpon>frmadverseinfectious.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanaedit3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanaedit3.Designer.cs">
+      <DependentUpon>frmanaedit3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatventclass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatventclass.Designer.cs">
+      <DependentUpon>frmstatventclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatventdept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatventdept.Designer.cs">
+      <DependentUpon>frmstatventdept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatventlevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatventlevel.Designer.cs">
+      <DependentUpon>frmstatventlevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="proxy\proxyadverseevent.cs" />
+    <Compile Include="proxy\proxyanareport.cs" />
+    <Compile Include="proxy\proxycontagion.cs" />
+    <Compile Include="viewer\frmadverseevent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmadverseevent.Designer.cs">
+      <DependentUpon>frmadverseevent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanaedit1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanaedit1.Designer.cs">
+      <DependentUpon>frmanaedit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanaedit2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanaedit2.Designer.cs">
+      <DependentUpon>frmanaedit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanaregister1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanaregister1.Designer.cs">
+      <DependentUpon>frmanaregister1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanaregister2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanaregister2.Designer.cs">
+      <DependentUpon>frmanaregister2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanastat1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanastat1.Designer.cs">
+      <DependentUpon>frmanastat1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmanastat2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmanastat2.Designer.cs">
+      <DependentUpon>frmanastat2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmcontagion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmcontagion.Designer.cs">
+      <DependentUpon>frmcontagion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmcontagionedit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmcontagionedit.Designer.cs">
+      <DependentUpon>frmcontagionedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmeventedit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmeventedit.Designer.cs">
+      <DependentUpon>frmeventedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmmultirecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmmultirecords.Designer.cs">
+      <DependentUpon>frmmultirecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmstatinstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmstatinstrument.Designer.cs">
+      <DependentUpon>frmstatinstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewer\frmzrbygfk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewer\frmzrbygfk.Designer.cs">
+      <DependentUpon>frmzrbygfk.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\report.biz\report.biz.csproj">
+      <Project>{d529e307-c410-42c9-96f4-391a09df8d67}</Project>
+      <Name>report.biz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\report.entity\report.entity.csproj">
+      <Project>{c4186c84-8c49-4716-ac69-4155974d6377}</Project>
+      <Name>report.entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\report.itf\report.itf.csproj">
+      <Project>{4aa9a95e-191b-4be8-977f-df058d4a738d}</Project>
+      <Name>report.itf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="viewer\frmopreationregister.resx">
+      <DependentUpon>frmopreationregister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmadverseeventstat.resx">
+      <DependentUpon>frmadverseeventstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmoccupatioexpstat.resx">
+      <DependentUpon>frmoccupatioexpstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmriskanastat.resx">
+      <DependentUpon>frmriskanastat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmrptportiondetail.resx">
+      <DependentUpon>frmrptportiondetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmrptproportion.resx">
+      <DependentUpon>frmrptproportion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatskinstrument.resx">
+      <DependentUpon>frmstatskinstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmzrbbgadvers.resx">
+      <DependentUpon>frmzrbbgadvers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmzrbbgkedit.resx">
+      <DependentUpon>frmzrbbgkedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frminterviewedit.resx">
+      <DependentUpon>frminterviewedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmoutpatientinterview.resx">
+      <DependentUpon>frmoutpatientinterview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmygalertedstat.resx">
+      <DependentUpon>frmygalertedstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmSbFirstPageUp.resx">
+      <DependentUpon>frmsbfirstpageup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmsbmzcfxmdr.resx">
+      <DependentUpon>frmsbmzcfxmdr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmygadversinpatstat.resx">
+      <DependentUpon>frmygadversinpatstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmnurseventinstrument.resx">
+      <DependentUpon>frmnurseventinstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmadverseinfectious.resx">
+      <DependentUpon>frmadverseinfectious.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmadverseevent.resx">
+      <DependentUpon>frmadverseevent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanaedit1.resx">
+      <DependentUpon>frmanaedit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanaedit2.resx">
+      <DependentUpon>frmanaedit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanaedit3.resx">
+      <DependentUpon>frmanaedit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanaregister1.resx">
+      <DependentUpon>frmanaregister1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanaregister2.resx">
+      <DependentUpon>frmanaregister2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanastat1.resx">
+      <DependentUpon>frmanastat1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmanastat2.resx">
+      <DependentUpon>frmanastat2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmcontagion.resx">
+      <DependentUpon>frmcontagion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmcontagionedit.resx">
+      <DependentUpon>frmcontagionedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmeventedit.resx">
+      <DependentUpon>frmeventedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmmultirecords.resx">
+      <DependentUpon>frmmultirecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatnurseventclass.resx">
+      <DependentUpon>frmstatnurseventclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatnurseventdept.resx">
+      <DependentUpon>frmstatnurseventdept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatnurseventlevel.resx">
+      <DependentUpon>frmstatnurseventlevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmStatNursEventSkin.resx">
+      <DependentUpon>frmstatnurseventskin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatnurseventsubclass.resx">
+      <DependentUpon>frmstatnurseventsubclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatventlevel.resx">
+      <DependentUpon>frmstatventlevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmstatinstrument.resx">
+      <DependentUpon>frmstatinstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmygaccessrecordstat.resx">
+      <DependentUpon>frmygaccessrecordstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmygalerted.resx">
+      <DependentUpon>frmygalerted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmYgDrugStat.resx">
+      <DependentUpon>frmygdrugstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmYgMachineStat.resx">
+      <DependentUpon>frmygmachinestat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmYgOperationStat.resx">
+      <DependentUpon>frmygoperationstat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewer\frmzrbygfk.resx">
+      <DependentUpon>frmzrbygfk.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

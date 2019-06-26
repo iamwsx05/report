@@ -10,7 +10,7 @@ using Report.Entity;
 namespace Report.Biz
 {
     /// <summary>
-    /// 不良事件.biz
+    /// 不良事件 .biz
     /// </summary>
     public class bizAdverseEvent : IDisposable
     {

@@ -36,6 +36,8 @@ namespace AutoBa
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAutoBa));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtJZJLH = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCardNo = new DevExpress.XtraEditors.TextEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.chkSZ = new DevExpress.XtraEditors.CheckEdit();
@@ -85,13 +87,12 @@ namespace AutoBa
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblInfo = new DevExpress.XtraEditors.LabelControl();
-            this.txtJZJLH = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcBackGround)).BeginInit();
             this.pcBackGround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtJZJLH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSZ.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteExec.Properties.CalendarTimeProperties)).BeginInit();
@@ -116,7 +117,6 @@ namespace AutoBa
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtJZJLH.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pcBackGround
@@ -125,7 +125,7 @@ namespace AutoBa
             this.pcBackGround.Controls.Add(this.gcData);
             this.pcBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pcBackGround.Location = new System.Drawing.Point(0, 72);
-            this.pcBackGround.Size = new System.Drawing.Size(1518, 475);
+            this.pcBackGround.Size = new System.Drawing.Size(1370, 475);
             this.pcBackGround.Visible = true;
             // 
             // defaultLookAndFeel
@@ -160,8 +160,29 @@ namespace AutoBa
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1518, 72);
+            this.panelControl1.Size = new System.Drawing.Size(1370, 72);
             this.panelControl1.TabIndex = 11;
+            // 
+            // txtJZJLH
+            // 
+            this.txtJZJLH.Location = new System.Drawing.Point(640, 11);
+            this.txtJZJLH.Name = "txtJZJLH";
+            this.txtJZJLH.Properties.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtJZJLH.Properties.Appearance.ForeColor = System.Drawing.Color.Crimson;
+            this.txtJZJLH.Properties.Appearance.Options.UseFont = true;
+            this.txtJZJLH.Properties.Appearance.Options.UseForeColor = true;
+            this.txtJZJLH.Size = new System.Drawing.Size(112, 22);
+            this.txtJZJLH.TabIndex = 951;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(560, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 12);
+            this.label1.TabIndex = 950;
+            this.label1.Text = "就诊记录号:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCardNo
             // 
@@ -246,7 +267,7 @@ namespace AutoBa
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
-            this.btnClose.Location = new System.Drawing.Point(2533, 7);
+            this.btnClose.Location = new System.Drawing.Point(2385, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(93, 23);
             this.btnClose.TabIndex = 116;
@@ -260,7 +281,7 @@ namespace AutoBa
             this.btnExec.Name = "btnExec";
             this.btnExec.Size = new System.Drawing.Size(96, 23);
             this.btnExec.TabIndex = 115;
-            this.btnExec.Text = "手工执行";
+            this.btnExec.Text = "手动执行";
             this.btnExec.Click += new System.EventHandler(this.btnExec_Click);
             // 
             // dteExec
@@ -376,7 +397,7 @@ namespace AutoBa
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemCheckEdit2});
-            this.gcData.Size = new System.Drawing.Size(1514, 471);
+            this.gcData.Size = new System.Drawing.Size(1366, 471);
             this.gcData.TabIndex = 68;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvData});
@@ -831,32 +852,11 @@ namespace AutoBa
             this.lblInfo.TabIndex = 15;
             this.lblInfo.Text = "正在上传数据，请稍候...";
             // 
-            // txtJZJLH
-            // 
-            this.txtJZJLH.Location = new System.Drawing.Point(640, 11);
-            this.txtJZJLH.Name = "txtJZJLH";
-            this.txtJZJLH.Properties.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtJZJLH.Properties.Appearance.ForeColor = System.Drawing.Color.Crimson;
-            this.txtJZJLH.Properties.Appearance.Options.UseFont = true;
-            this.txtJZJLH.Properties.Appearance.Options.UseForeColor = true;
-            this.txtJZJLH.Size = new System.Drawing.Size(112, 22);
-            this.txtJZJLH.TabIndex = 951;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(560, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 12);
-            this.label1.TabIndex = 950;
-            this.label1.Text = "就诊记录号:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmAutoBa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1518, 547);
+            this.ClientSize = new System.Drawing.Size(1370, 547);
             this.Controls.Add(this.panelControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAutoBa";
@@ -874,6 +874,7 @@ namespace AutoBa
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtJZJLH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSZ.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteExec.Properties.CalendarTimeProperties)).EndInit();
@@ -898,7 +899,6 @@ namespace AutoBa
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtJZJLH.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

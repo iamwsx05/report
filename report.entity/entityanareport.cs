@@ -11,7 +11,7 @@ namespace Report.Entity
     public class EntityAnaRegister1 : BaseDataContract
     {
         /// <summary>
-        /// AnaId
+        /// AnaId  AnaID
         /// </summary>
         [DataMember]
         public decimal AnaId { get; set; }

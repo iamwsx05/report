@@ -2873,7 +2873,7 @@ namespace Report.Biz
                 Sql = @"select a.rptid,
                         a.reporttime,
                         extractvalue(b.xmldata, '/FormData/X242') as KS,
-                        extractvalue(b.xmldata, '/FormData/X006') as FSRQSJ,
+                        extractvalue(b.xmldata, '/FormData/X005') as FSRQSJ,
                         a.patno as ZYHZLH,
                         extractvalue(b.xmldata, '/FormData/X004') as CH,
                         a.patname as XM,

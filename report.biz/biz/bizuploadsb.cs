@@ -11,7 +11,7 @@ using Common.Entity;
 namespace Report.Biz
 {
     /// <summary>
-    /// 社保上传.biz
+    /// 社保上传.biz 已不用
     /// </summary>
     public class bizUploadSb : IDisposable
     {

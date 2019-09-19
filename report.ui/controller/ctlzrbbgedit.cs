@@ -926,7 +926,10 @@ namespace Report.Ui
 
             using (ProxyAdverseEvent proxy = new ProxyAdverseEvent())
             {
-                proxy.Service.UpdateZrbbgPrintFlg(Function.Dec(this.ZrbbgDisplayVo.rptId));
+                if (GlobalLogin.objLogin.lstRoleID.Contains("34"))
+                {
+                    proxy.Service.UpdateZrbbgPrintFlg(Function.Dec(this.ZrbbgDisplayVo.rptId));
+                }
             }
         }
 

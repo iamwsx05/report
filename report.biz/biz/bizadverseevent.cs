@@ -347,6 +347,8 @@ namespace Report.Biz
                 IDataParameter parm = svc.CreateParm();
                 parm.Value = dicParm.FirstOrDefault(t => t.key == "eventId").value;
                 lstParm.Add(parm);
+                DateTime  ? startTime = null;
+                DateTime ? endTime = null; 
 
                 foreach (EntityParm po in dicParm)
                 {
@@ -356,13 +358,16 @@ namespace Report.Biz
                     switch (po.key)
                     {
                         case "reportDate":
-                            IDataParameter parm1 = svc.CreateParm();
-                            parm1.Value = keyValue.Split('|')[0] + " 00:00:00";
-                            lstParm.Add(parm1);
-                            IDataParameter parm2 = svc.CreateParm();
-                            parm2.Value = keyValue.Split('|')[1] + " 23:59:59";
-                            lstParm.Add(parm2);
-                            strSub += " and (t.reportTime between ? and ?)";
+                            //IDataParameter parm1 = svc.CreateParm();
+                            //parm1.Value = keyValue.Split('|')[0] + " 00:00:00";
+                            //lstParm.Add(parm1);
+                            //IDataParameter parm2 = svc.CreateParm();
+                            //parm2.Value = keyValue.Split('|')[1] + " 23:59:59";
+                            //lstParm.Add(parm2);
+                            //strSub += " and (t.reportTime between ? and ?)";
+
+                            startTime = Function.Datetime(keyValue.Split('|')[0] + " 00:00:00");
+                            endTime = Function.Datetime(keyValue.Split('|')[1] + " 23:59:59");
                             break;
                         case "deptCode":
                             if (keyValue.IndexOf("','") > 0)
@@ -416,6 +421,17 @@ namespace Report.Biz
                         vo = new EntityEventDisplay();
                         vo.rptId = dr["rptId"].ToString();
                         vo.reportTime = dr["reportTime"].ToString();
+
+                        if (!string.IsNullOrEmpty(vo.reportTime))
+                        {
+                            DateTime reportime = Function.Datetime(vo.reportTime);
+                            if (reportime >= startTime && reportime <= endTime)
+                            {
+                                vo.reportTime = dr["reportTime"].ToString();
+                            }
+                            else
+                                continue;
+                         }
                         vo.reportOperCode = dr["reportOperCode"].ToString();
                         vo.reportOperName = dr["reportOperName"].ToString();
                         vo.reportDeptName = dr["reportDeptName"].ToString();
@@ -442,6 +458,9 @@ namespace Report.Biz
                         vo.HCQM = dr["HCQM"].ToString();
                         vo.HLQM = dr["HLQM"].ToString();
                         vo.XZQM = dr["XZQM"].ToString();
+
+
+
                         data.Add(vo);
                     }
                 }

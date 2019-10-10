@@ -2883,6 +2883,11 @@ namespace Report.Biz
             List<EntityNursEventStrument> data = new List<EntityNursEventStrument>();
             string startTime = string.Empty;
             string endTime = string.Empty;
+
+            DateTime ? startTime1 = null;
+            DateTime ? endTime1 = null;
+
+
             string ShcdFlg = string.Empty;
 
             SqlHelper svc = null;
@@ -2967,7 +2972,9 @@ namespace Report.Biz
                         extractvalue(b.xmldata, '/FormData/X200') as SBYY_4,
                         extractvalue(b.xmldata, '/FormData/X205') as SBYY_5,
                         extractvalue(b.xmldata, '/FormData/X210') as SBYY_6,
-                        extractvalue(b.xmldata, '/FormData/X211') as SBYY_7
+                        extractvalue(b.xmldata, '/FormData/X211') as SBYY_7,
+                        extractvalue(b.xmldata, '/FormData/X0801') as DSR ,
+                        extractvalue(b.xmldata, '/FormData/X0802') as DSRZC  
                         from icare.rptEvent a 
                         left join  icare.rpteventdata b 
                         on a.rptid = b.rptid
@@ -2987,13 +2994,15 @@ namespace Report.Biz
                     switch (po.key)
                     {
                         case "reportDate":
-                            IDataParameter parm1 = svc.CreateParm();
-                            parm1.Value = keyValue.Split('|')[0] + " 00:00:00";
-                            lstParm.Add(parm1);
-                            IDataParameter parm2 = svc.CreateParm();
-                            parm2.Value = keyValue.Split('|')[1] + " 23:59:59";
-                            lstParm.Add(parm2);
-                            strSub += " and (a.reporttime between ? and ?)";
+                            //IDataParameter parm1 = svc.CreateParm();
+                            //parm1.Value = keyValue.Split('|')[0] + " 00:00:00";
+                            //lstParm.Add(parm1);
+                            //IDataParameter parm2 = svc.CreateParm();
+                            //parm2.Value = keyValue.Split('|')[1] + " 23:59:59";
+                            //lstParm.Add(parm2);
+                            //strSub += " and (a.reporttime between ? and ?)";
+                            startTime1 = Function.Datetime(keyValue.Split('|')[0] + " 00:00:00");
+                            endTime1 = Function.Datetime(keyValue.Split('|')[1] + " 23:59:59");
                             break;
                         case "deptCode":
                             strSub += " and (a.reportdeptcode = '" + keyValue + "')";
@@ -3037,6 +3046,20 @@ namespace Report.Biz
                     foreach (DataRow dr in dt.Rows)
                     {
                         EntityNursEventStrument voClone = new EntityNursEventStrument();
+
+                        voClone.reportTime = dr["reportTime"].ToString();
+
+                        if (!string.IsNullOrEmpty(voClone.reportTime))
+                        {
+                            DateTime reportime = Function.Datetime(voClone.reportTime);
+                            if (reportime >= startTime1 && reportime <= endTime1)
+                            {
+                                voClone.reportTime = dr["reportTime"].ToString();
+                            }
+                            else
+                                continue;
+                        }
+
                         voClone.XH = i;
                         i++;
                         voClone.KS = dr["KS"].ToString();
@@ -3074,6 +3097,8 @@ namespace Report.Biz
                         voClone.AQSJJG = voClone.AQSJJG.Replace("<X081><![CDATA[", "");
                         voClone.AQSJJG = voClone.AQSJJG.Replace("]]></X081>", "");
                         voClone.SBZ = dr["SBZ"].ToString();
+                        voClone.DSR = dr["DSR"].ToString();
+                        voClone.DSRZC = dr["DSRZC"].ToString();
 
                         //隐患事件
                         if (dr["YHSJ"].ToString() == "1")
@@ -3096,6 +3121,8 @@ namespace Report.Biz
                         //死亡
                         if (dr["SW"].ToString() == "1")
                             voClone.AQSJSHCD += "死亡";
+
+                       
 
                         #region 安全事件类型
                         //查对不合格
@@ -3232,10 +3259,10 @@ namespace Report.Biz
                             voClone.AQSJLX += "其他事件";
 
                         #endregion
-                #endregion
-
+                
                         data.Add(voClone);
                     }
+                    #endregion
                 }
                 #endregion
 

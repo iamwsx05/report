@@ -817,6 +817,8 @@ namespace Report.Entity
     public class EntityNursEventStrument : BaseDataContract
     {
         #region 全院护理上报安全事件汇总表
+
+        public string reportTime { get; set; }
         /// <summary>
         /// 统计月份
         /// </summary>
@@ -892,6 +894,14 @@ namespace Report.Entity
         /// </summary>
         [DataMember]
         public int HJ { get; set; }
+        /// <summary>
+        /// 当事人
+        /// </summary>
+        public string DSR { get; set; }
+        /// <summary>
+        /// 当事人职称
+        /// </summary>
+        public string DSRZC { get; set; }
         #endregion
     }
 
